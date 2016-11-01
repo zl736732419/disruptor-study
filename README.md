@@ -7,10 +7,10 @@
 ####handleEvents and handleEventsWithWorkPool区别
 #####handleEvents
     采用hanldeEvents处理多个任务时，如果注册了多个任务处理器，那么这些任务处理器
-    会一次执行，（当然这些任务处理器要属于同一个工作组）disruptor.handleEventsWith(processors);
+    会一次执行,（当然这些任务处理器要属于同一个工作组）disruptor.handleEventsWith(processors);
 
 ####handleEventsWithWorkPool
     采用handleEventsWithWorkPool处理多个任务时，如果注册了多个任务处理器，那么这些
     disruptor会从分组中的这些处理器中选择其中一个执行，而不是像上面handleEvents那样
-    每一个处理器都一次执行
+    每一个处理器都一次执行,（当然这些任务处理器要属于同一个工作组）disruptor.handleEventsWithWorkPool(processors);
     

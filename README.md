@@ -14,3 +14,4 @@
     disruptor会从分组中的这些处理器中选择其中一个执行，而不是像上面handleEvents那样
     每一个处理器都一次执行,（当然这些任务处理器要属于同一个工作组）disruptor.handleEventsWithWorkPool(processors);
     
+>disruptor框架中多个线程之间数据的传递是通过定义的事件绑定数据传递的

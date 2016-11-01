@@ -1,7 +1,7 @@
 package com.zheng;
 
 import com.google.common.collect.Lists;
-import com.zheng.utils.MathUtil;
+import com.zheng.utils.CommonUtil;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
@@ -31,7 +31,7 @@ public class Progressor implements Serializable {
         this.total = total;
         this.text = text;
 
-        this.percent = MathUtil.decimal(this.complated * 1.0 / this.total * 100, 2);
+        this.percent = CommonUtil.decimal(this.complated * 1.0 / this.total * 100, 2);
         this.finished = this.complated == this.total;
     }
 

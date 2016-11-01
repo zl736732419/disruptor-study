@@ -6,7 +6,7 @@ import java.math.BigDecimal;
  * 常用数字工具
  * Created by zhenglian on 2016/11/1.
  */
-public class MathUtil {
+public class CommonUtil {
 
     /**
      * 将 number保留scale小数

@@ -15,6 +15,9 @@ public class CommonUtil {
      * @return
      */
     public static double decimal(double number, int scale) {
+    	if(scale < 0) {
+    		scale = 0;
+    	}
         BigDecimal b = new BigDecimal(number);
         double decimal = b.setScale(scale, BigDecimal.ROUND_HALF_UP).doubleValue();
         return decimal;

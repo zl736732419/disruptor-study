@@ -35,6 +35,8 @@ public class Application {
                 .addProcessorPool(new ZgItemProcessor(), new ChooseItemProcessor());
         MemoryCache.getInstance().put(performer.getOnlyId(), new Progressor(0, task.getTotalTaskNum(), "准备执行任务..."));
         performer.process();
+        Progressor progressor = (Progressor) MemoryCache.getInstance().get(performer.getOnlyId());
+        System.out.println(progressor.getTotal() + "," + progressor.getComplated() + "," + progressor.isFinished());
         //初始化进度条
         logger.info("考试结束...");
     }

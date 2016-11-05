@@ -22,20 +22,20 @@ public class DisruptorExceptionHandler implements ExceptionHandler<ValueEvent> {
     public void handleEventException(Throwable throwable, long l, ValueEvent valueEvent) {
         performer.getHasError().compareAndSet(false, true);
         String message = MessageFormat.format("处理{0}数据出错", valueEvent.getObject().toString());
-        logger.debug("错误：" + ThrowableParser.toString(throwable));
-        logger.debug(message);
+        logger.error("错误：" + ThrowableParser.toString(throwable));
+        logger.error(message);
 
         valueEvent.setHasError(true);
         valueEvent.setMessage(message);
     }
 
     public void handleOnStartException(Throwable throwable) {
-        logger.debug("启动disruptor出错");
-        logger.debug(ThrowableParser.toString(throwable));
+        logger.error("启动disruptor出错");
+        logger.error(ThrowableParser.toString(throwable));
     }
 
     public void handleOnShutdownException(Throwable throwable) {
-        logger.debug("关闭disruptor出错");
-        logger.debug(ThrowableParser.toString(throwable));
+        logger.error("关闭disruptor出错");
+        logger.error(ThrowableParser.toString(throwable));
     }
 }
